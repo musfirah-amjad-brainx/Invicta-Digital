@@ -587,7 +587,7 @@ hr {
   max-width: 450px;
   margin: 20px auto;
 }
-#spot-left:hover{
+.spot-left:hover{
         background-color: var(--dull-red);
         box-shadow: inset 0 2px 2px 0 rgba(255,255,255,0.22), 0 233px 233px 0 rgba(255,255,255,0.12) inset;
 }
