@@ -1,16 +1,23 @@
 // Get the modal
 var modal = document.getElementById("reserve-yourSpot");
 
-// Get the button that opens the modal
-var btn = document.getElementById("spots-left");
+// Get all buttons with class 'spots-left'
+var btns = document.querySelectorAll(".spots-left");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+// When any button with class 'spots-left' is clicked, open the modal 
+btns.forEach(function(btn) {
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+});
+
+// Event listener to close the modal when the span is clicked
+span.addEventListener("click", function() {
+  modal.style.display = "none";
+});
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
