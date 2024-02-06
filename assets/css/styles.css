@@ -457,16 +457,18 @@ hr {
   outline: none;
   text-align: left;
   font-size: 28px;
-  color: var(--grey);
+  color: var(--dull-black);
 }
 .offer-container h3 {
   text-align: center;
   font-size: 18px;
   margin-bottom: 2rem;
+  color: var(--dull-black);
 }
 .offer-container h2 {
   text-align: center;
   font-size: 21px;
+  color: var(--dull-black);
 }
 .offerText {
   padding: 0 10px;
