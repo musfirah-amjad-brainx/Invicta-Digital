@@ -34,11 +34,13 @@ background-color: var(--off-white);
   font-family: "GMB";
   src: url("../fonts/Geomanist-Bold.ttf");
   font-weight: Bold;
+  font-display:swap;
 }
 @font-face {
   font-family: "GMR";
   src: url("../fonts/Geomanist-Regular.otf");
   font-weight: normal;
+  font-display:swap;
 }
 @font-face {
     font-family: PoppinsBlack;
@@ -384,7 +386,7 @@ hr {
 .pop-up__container {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 99999999; /* Sit on top */
+  z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
@@ -951,6 +953,10 @@ font-weight: bold;
     background-image: url(../images/linesBg.png);
     height: 100vh;
 }
+.mobile-only
+{
+  display: none;
+}
 .header-bg{
     padding-top: 10px;
     padding-bottom: 10px;
@@ -1215,6 +1221,10 @@ font-weight: bold;
         flex-wrap: wrap;
         gap: 20px 
    }
+   .mobile-only
+  {
+    display: block;
+  }
    .waiting-room-wrapper {
         padding-inline: 5px;
    }
@@ -1282,13 +1292,29 @@ font-weight: bold;
 }
 
 /* Booking Tier css*/
-.booking-tier
- {
+.booking-tier-outer,.booking-tier
+{
     overflow: initial;
     background-color: rgba(0, 0, 0, 0);
-    background-image: url(//www.highticketecommerce.co/hosted/images/10/50e1123010465fbdbeab03951a82c2/5cd4ae27-1522-42ce-beb5-23d0513b2f57.png);
+    background-image: url("https://www.highticketecommerce.co/hosted/images/10/50e1123010465fbdbeab03951a82c2/5cd4ae27-1522-42ce-beb5-23d0513b2f57.png");
+    -webkit-background-size: cover !important;
+    background-attachment: fixed !important;
+    background-repeat: repeat repeat !important;
+    background-position: center center;
 }
-.section-container.section-bg[data-title="Section"][data-block-color="0074C7"] 
+.booking-tier-bg
+{    
+   -webkit-background-size: cover !important;
+   background-attachment: fixed !important;
+   background-repeat: repeat repeat !important;
+   background-position: center center;
+   overflow: initial;
+   background-image: url(../images/circle.png);
+    padding-bottom: 0px;
+    background-color: rgba(255, 255, 255, 0);
+    outline: none; 
+}
+.booking-tier-outer .section-container.section-bg[data-title="Section"][data-block-color="0074C7"] 
 {
     padding-top: 20px;
     padding-bottom: 0;
@@ -1296,102 +1322,133 @@ font-weight: bold;
     outline: none;
     background-image: url("//www.highticketecommerce.co/hosted/images/72/dbacf2b2c9434ea64e8952be7ced51/c2.png");
 }
-.section-title 
+.booking-tier-outer .section-title 
 {
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
-    max-width: 455px;
+    width: 100%;
     font-family: sans-serif;
     color: rgb(228, 59, 44);
     margin: auto;
 }
-.section-subtitle 
+.booking-tier-outer .section-subtitle 
 {
     text-align: center;
-    font-size: 24px;
-    font-size: 32px;
+    font-size: 30px;
+    color: rgb(37, 50, 61);
+    line-height: 41.6px;
     font-weight: 700;
-    font-family: GMB;
-    max-width: 700px;
+    font-family: PoppinsBlack;
+    max-width: 720px;
     margin: auto;
 }
-.row-wrapper 
+.booking-tier-outer .row-wrapper 
 {
     padding-top: 20px;
-    padding-bottom: 20px;
     margin: 0 auto;
 }
-.content-container 
+.booking-tier-outer .content-container 
 {
     padding: 0 10px;
 }
-.section-title.title-big,
-.section-subtitle.title-small 
+.booking-tier-outer .section-title.title-big,
+.booking-tier-outer .section-subtitle.title-small 
 {
     margin-top: 15px;
     outline: currentcolor;
     cursor: pointer;
 }
-.video-container 
+.booking-tier-outer .video-container 
 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 10px 0;
-    column-gap: 20px;
+    column-gap: 80px; 
 }
-.video-container iframe
+.booking-tier-outer .video-container iframe
 {
-    width: 35%;
+  width: 30%;
     object-fit: contain;
     margin: 10px;
 }
-.index_title 
+.booking-tier-outer .index_title 
 {
     text-align: center;
     font-size: 32px;
-    margin-top: 75px;
+    margin-top: 20px;
 }
-.index_subtitle 
+.booking-tier-outer .index_subtitle 
 {
     text-align: center;
     font-size: 23px;
     margin-top: 10px;
     margin-bottom: 20px;
+    font-family: none;
+    font-weight: 200;
 }
-.image-container
+.booking-tier-outer .image-container
  {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 10px 0;
-    column-gap: 20px;
+     column-gap: 80px; 
+
 }
-.image-container img
+.booking-tier-outer .image-container img
  {
-    width: 35%;
+    width: 30%;
     object-fit: contain;
     margin: 10px;
 }
-@media screen and (max-width: 768px) 
-{
-    .image-container img 
-    {
-        width: calc(100% - 20px);
-    }
-}
-@media screen and (max-width: 768px) 
-{
-    .video-container iframe 
-    {
-        width: calc(100% - 20px);
-    }
-}
+
 @media screen and (max-width: 1280px)
 {
-    .calendly 
+    .booking-tier-outer .calendly 
     {
         height: 65%;
     }
+}
+@media screen and (max-width: 768px)
+{
+    .booking-tier-outer .section-subtitle {
+      line-height: 31.2px !important;
+      font-size: 24px;
+    }
+    .get-started {
+      margin-top: 29px;
+}
+.elImageWrapper
+{
+  background:white;
+}
+.booking-tier-outer .section-title
+{
+  font-size: 17px;
+}
+.application__Container .image-wrapper
+{
+ justify-content: center;
+}
+.booking-tier-outer .video-container {
+
+  flex-direction: column;
+   column-gap: 0px; 
+}
+.booking-tier-outer .video-container iframe {
+  width: 100%;
+  max-width: 93%;
+}
+.booking-tier-outer .image-container
+ {
+  flex-direction: column;
+   column-gap: 0px; 
+}
+.booking-tier-outer .image-container img
+ {
+  width: 100%;
+  max-width: 93%;
+}
 }
