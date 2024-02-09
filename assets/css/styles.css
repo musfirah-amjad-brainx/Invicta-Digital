@@ -1403,11 +1403,6 @@ font-weight: bold;
     object-fit: contain;
     margin: 10px;
 }
-.Calendly-custom
-{
-  height:100%;
-  width:100%;
-}
 @media screen and (max-width: 1280px)
 {
     .booking-tier-outer .calendly 
