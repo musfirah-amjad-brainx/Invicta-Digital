@@ -30,7 +30,7 @@ document.addEventListener('click', closeIfOutside);
 var countdownStarted = false; // Flag to track whether countdown has started
 
 // Set the default countdown duration to 10 minutes
-var countDownDuration = 0.1 * 60;
+var countDownDuration = 10 * 60;
 
 // Function to pad single-digit numbers with a leading zero
 function padZero(number) {
