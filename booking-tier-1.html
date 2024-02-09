@@ -13,6 +13,7 @@
           <img
             src="./assets/images/logo.png"
             class="image" height="" alt="Logo"
+            preload
             width="150"
           />
         </div>
@@ -72,16 +73,7 @@
         </div>
       </div>
     </div>
-    <iframe
-      src="https://calendly.com/d/gpn-mmb-bj8/application-call-high-ticket-ecom-coaching?embed_domain=www.highticketecommerce.co&amp;embed_type=Inline"
-      class="calendly"
-      width="100%"
-      height="100%"
-      title="Calendly"
-      frameborder="0"
-      title="Select a Date &amp; Time - Calendly"
-      data-gtm-yt-inspected-11="true"
-    ></iframe>
+    <div class="calendly-container" data-src="https://calendly.com/d/gpn-mmb-bj8/application-call-high-ticket-ecom-coaching?embed_domain=www.highticketecommerce.co&amp;embed_type=Inline"></div>
     <div class="booking-tier">
       <h1 class="index_title"><b>Want more proof?</b></h1>
       <h2 class="index_subtitle">Take a quick scroll...</h2>
@@ -286,4 +278,15 @@
       </div>
     </section>
   </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var calendlyContainer = document.querySelector('.calendly-container');
+        var calendlyIframe = document.createElement('iframe');
+        calendlyIframe.src = calendlyContainer.getAttribute('data-src');
+        calendlyIframe.classList.add('Calendly-custom'); 
+        calendlyIframe.setAttribute('frameborder', '0');
+        calendlyIframe.setAttribute('allowfullscreen', 'true');
+        calendlyContainer.appendChild(calendlyIframe);
+    });
+</script>
 </html>
