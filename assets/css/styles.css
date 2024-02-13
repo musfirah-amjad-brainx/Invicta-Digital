@@ -1926,4 +1926,7 @@ hr {
     height: auto;
     width: 100%;
   }
+  .thank-you-page .list_items {
+    padding-left: 0px;
+  }
 }
